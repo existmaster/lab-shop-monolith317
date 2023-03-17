@@ -206,7 +206,7 @@
             async decreaseStock(params) {
                 try {
                     if(!this.offline) {
-                        var temp = await axios.put(axios.fixUrl(this.value._links['updatestock'].href), params)
+                        var temp = await axios.put(axios.fixUrl(this.value._links['decreasestock'].href), params)
                         for(var k in temp.data) {
                             this.value[k]=temp.data[k];
                         }
