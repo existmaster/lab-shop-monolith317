@@ -29,11 +29,11 @@ public class Order {
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
-        labshopmonolith.external.UpdateStockCommand updateStockCommand = new labshopmonolith.external.UpdateStockCommand();
+        labshopmonolith.external.DecreaseStockCommand decreaseStockCommand = new labshopmonolith.external.DecreaseStockCommand();
         // mappings goes here
         MonolithApplication.applicationContext
             .getBean(labshopmonolith.external.InventoryService.class)
-            .updateStock(/* get???(), */updateStockCommand);
+            .decreaseStock(/* get???(), */decreaseStockCommand);
 
         OrderPlaced orderPlaced = new OrderPlaced(this);
         orderPlaced.publishAfterCommit();

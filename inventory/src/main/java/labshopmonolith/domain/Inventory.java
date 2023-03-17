@@ -27,5 +27,5 @@ public class Inventory {
         return inventoryRepository;
     }
 
-    public void updateStock(UpdateStockCommand updateStockCommand) {}
+    public void decreaseStock(DecreaseStockCommand decreaseStockCommand) {}
 }
